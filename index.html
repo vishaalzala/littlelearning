@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="css/experience-v20261030-02.css" />
   <link rel="stylesheet" href="css/layout-v20261030-03.css" />
   <link rel="stylesheet" href="css/studio-v3.css" />
+  <link rel="stylesheet" href="css/adventure-home-v31.css" />
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-GM5VNJ5795"></script>
   <script>
@@ -24,7 +25,7 @@
   </script>
 </head>
 <body>
-  <!-- Build: v20261030-04 | Little Learning 3.0 grade curriculum and voice -->
+  <!-- Build: v20261030-05 | Little Learning Adventure illustrated home -->
   <main class="app">
       <header class="siteHeader">
         <button class="brandHome" id="brandHomeBtn" type="button" aria-label="Go to Little Learning home">
@@ -100,8 +101,17 @@
         <div class="llTopicHeading"><h3 id="llSelectedGrade">Kindergarten • Math</h3><span id="llTopicCount"></span></div>
         <div class="llTopicGrid" id="llTopicGrid" aria-label="Learning topics"></div>
       </section>
+      <section class="adventureQuickFeatures" aria-label="Quick Play favourites">
+        <div class="adventureQuickHeading"><div><span>⭐ FUN &amp; GAMES</span><h2>Quick Play</h2></div><p>Jump into a favourite game!</p></div>
+        <div class="adventureQuickShowcase">
+          <button type="button" class="quickFeature featureMath" data-featured-game="math"><span class="quickFeatureIcon" aria-hidden="true">🍎</span><strong>Math Fun</strong><small>Count &amp; add</small></button>
+          <button type="button" class="quickFeature featureEnglish" data-featured-game="english"><span class="quickFeatureIcon" aria-hidden="true">🦊</span><strong>Word Adventure</strong><small>Find the word</small></button>
+          <button type="button" class="quickFeature featureCircle" data-featured-game="find"><span class="quickFeatureIcon" aria-hidden="true">🎯</span><strong>Find &amp; Circle</strong><small>Spot the picture</small></button>
+          <button type="button" class="quickFeature featureMatch" data-featured-game="matchnum"><span class="quickFeatureIcon" aria-hidden="true">🧩</span><strong>Match Numbers</strong><small>Count &amp; connect</small></button>
+        </div>
+      </section>
       <details id="llQuickDetails" class="llQuickDetails">
-        <summary>🎮 Quick Play <span>12 familiar games</span></summary>
+        <summary><span class="quickDetailsIcon" aria-hidden="true">🎮</span><strong>Explore all 12 Quick Play games</strong><span class="quickDetailsCaption">Tap to see all activities</span></summary>
 
       <div class="homeSectionHeading"><h2>🎮 Choose a game</h2><span>12 fun activities</span></div>
       <div class="gameGrid">
@@ -288,6 +298,7 @@
   <script src="curriculum/questions-v3.js"></script>
   <script src="js/voice-v3.js"></script>
   <script src="js/curriculum-v3.js"></script>
+  <script src="js/adventure-home-v31.js"></script>
 <script>
   if('serviceWorker' in navigator && location.protocol.startsWith('http')){
     window.addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
