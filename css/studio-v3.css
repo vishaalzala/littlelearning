@@ -1,0 +1,92 @@
+/* Little Learning 3.0 — colourful, accessible Kindergarten–Grade 6 studio */
+:root{--ll-ink:#253250;--ll-blue:#5379ff;--ll-mint:#10b987;--ll-lav:#7c66ec;--ll-gold:#ffcf60}
+#homePage .hero{background:linear-gradient(115deg,#e5f0ff 0%,#fff7e0 55%,#ddfbe9 100%)}
+.llStudio{margin:13px 0 16px;padding:clamp(16px,2.5vw,30px);background:rgba(255,255,255,.91);border:1px solid #eaf0fa;border-radius:29px;box-shadow:0 12px 36px #31456e17;position:relative;overflow:hidden}
+.llStudio:before{content:"";position:absolute;width:230px;height:230px;right:-65px;top:-100px;border-radius:50%;background:linear-gradient(120deg,#f4eaff99,#c1f7fc99);pointer-events:none}
+.llStudioHeader{position:relative;display:flex;gap:18px;align-items:center;justify-content:space-between;margin-bottom:17px}
+.llStudioHeader h2{font-size:clamp(25px,3vw,39px);letter-spacing:-.04em;line-height:1.12;margin:4px 0}
+.llStudioHeader p{font-size:clamp(13px,1.3vw,16px);margin:7px 0 0;color:#65748d;font-weight:700}
+.llEyebrow{font-size:12px;color:#5b53bb;font-weight:900;letter-spacing:.09em}
+.llStudioBadge{background:#ecf3ff;border:1px solid #d8e8ff;border-radius:999px;padding:11px 16px;white-space:nowrap;font-size:13px;font-weight:900;color:#4564a7}
+.llCurriculumTools{position:relative;display:flex;align-items:end;gap:14px;justify-content:space-between;flex-wrap:wrap;margin:13px 0 17px}
+.llSubjects{display:flex;gap:8px;background:#eff2ff;padding:6px;border-radius:18px}
+.llSubjects button{min-height:52px;min-width:126px;font-size:17px;font-weight:900;border:0;background:transparent;border-radius:14px;color:#60708c;padding:10px 18px}
+.llSubjects button.isSelected{color:#fff;background:linear-gradient(125deg,#7470fb,#4a9bea);box-shadow:0 5px 12px #6574d437}
+.llGradeLabel{font-size:13px;font-weight:900;color:#596b83;display:flex;flex-direction:column;gap:5px;min-width:220px}
+.llGradeLabel select{background:#fff;padding:12px 14px;font-size:17px;font-weight:800;color:#24375d;border:2px solid #e4e8fa;border-radius:16px;min-height:52px}
+.llCurrResume[hidden],.llCurrCelebration[hidden],.llCurrPlay[hidden],.llCurrDropHint[hidden]{display:none!important}
+.llCurrResume{display:flex;align-items:center;gap:15px;justify-content:space-between;padding:12px 16px;border:2px solid #c4ebf0;background:linear-gradient(105deg,#e1fff2,#eff9ff);border-radius:19px;margin:0 0 18px}
+.llCurrResume div{min-width:0;display:grid;gap:3px}.llCurrResume small{font-size:11px;color:#318b80;font-weight:900}.llCurrResume strong{font-size:15px;color:#2d4961}
+.llPrimary{background:linear-gradient(115deg,#11b98d,#13a6c5);border:0;border-radius:15px;color:#fff;font-size:17px;font-weight:900;padding:13px 22px;min-height:50px;box-shadow:0 5px 11px #209c9e38;cursor:pointer}
+.llPrimary:hover{filter:brightness(.96)}
+.llTopicHeading{display:flex;justify-content:space-between;align-items:center;gap:12px;position:relative;margin:5px 0 12px}
+.llTopicHeading h3{font-size:clamp(21px,2.1vw,27px);margin:0}
+.llTopicHeading span{font-size:12px;color:#718099;font-weight:800}
+.llTopicGrid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:11px}
+.llTopic{background:#fff;border:2px solid #e7edfa;border-radius:21px;min-height:158px;padding:14px 11px;display:flex;flex-direction:column;align-items:flex-start;gap:7px;text-align:left;color:#203759;box-shadow:0 4px 10px #20325209;transition:transform .12s,box-shadow .12s}
+.llTopic:hover{transform:translateY(-2px);box-shadow:0 8px 20px #2f44752b}
+.llTopic:focus-visible{outline:4px solid #7562ea;outline-offset:2px}
+.llTopicIcon{width:53px;height:53px;border-radius:16px;background:#f0edff;display:grid;place-items:center;font-size:29px}
+.llTopic:nth-child(4n+1) .llTopicIcon{background:#fff0df}
+.llTopic:nth-child(4n+2) .llTopicIcon{background:#dff9e9}
+.llTopic:nth-child(4n+3) .llTopicIcon{background:#e6f1ff}
+.llTopic strong{font-size:clamp(13px,1.1vw,16px);line-height:1.17;margin-top:2px;overflow-wrap:anywhere}
+.llTopicStatus{font-size:11px;color:#606c93;font-weight:800;margin-top:auto}
+.llTopicProgress{width:100%;height:7px;border-radius:10px;background:#e9ecf7;overflow:hidden}
+.llTopicProgress span{height:100%;background:linear-gradient(90deg,#2ac49b,#44aaf2);display:block;border-radius:10px;transition:width .2s}
+.llQuickDetails{border:2px dashed #d9e1f7;border-radius:21px;background:#ffffffd6;margin:14px 0;padding:0 15px;overflow:hidden}
+.llQuickDetails summary{list-style:none;padding:17px 5px;display:flex;align-items:center;justify-content:space-between;font-size:clamp(16px,1.65vw,22px);font-weight:900;cursor:pointer;color:#283959}
+.llQuickDetails summary::-webkit-details-marker{display:none}
+.llQuickDetails summary:after{content:"⌄";font-size:23px;color:#707b9c}
+.llQuickDetails[open] summary:after{content:"⌃"}
+.llQuickDetails summary span{color:#697a91;font-size:12px;margin-left:auto;margin-right:12px}
+.llQuickDetails .homeSectionHeading{display:none!important}
+.llQuickDetails .gameGrid{margin:5px 0 18px!important}
+.llQuickDetails .game{min-height:135px!important}
+.llQuickDetails .game b{width:47px!important;height:47px!important;font-size:28px!important;margin-bottom:6px!important}
+.llQuickDetails .game span{font-size:clamp(14px,1.4vw,18px)!important}
+.llQuickDetails .gameMeta{font-size:10px!important}
+/* Lesson surface: use one clear card and bottom progress */
+.llCurriculumPage.active{display:block;width:min(1080px,100%);margin:0 auto}
+.llCurrTop{display:flex;gap:10px;align-items:center;margin-bottom:11px}
+.llCurrTop button{min-height:55px;border:0;background:#fff;border-radius:17px;box-shadow:0 5px 19px #23376516;font-weight:900;padding:12px 19px;color:#293b60}
+.llCurrTop div{flex:1;min-width:0;text-align:center;background:#fff;border-radius:17px;padding:12px 7px;font-size:clamp(17px,2.2vw,25px);font-weight:900}
+.llCurrPlay{display:flex;flex-direction:column;gap:12px;min-height:calc(100dvh - 92px)}
+.llCurrMain{background:#fff;border:1px solid #e7eef8;border-radius:28px;padding:clamp(16px,2.5vw,32px);box-shadow:0 12px 30px #2b426b17;flex:1 0 auto;text-align:center;display:flex;flex-direction:column;align-items:center}
+.llCurrTopline{display:flex;gap:10px;justify-content:space-between;align-items:center;width:100%;color:#637aa0;font-weight:900;font-size:13px}
+.llCurrTopline span{border-radius:13px;background:#eff2ff;padding:9px 13px}
+.llCurrMain h2{font-size:clamp(22px,3.4vw,39px);margin:16px 0 18px;line-height:1.17}
+.llCurrVisual{max-width:100%;min-height:135px;display:grid;place-items:center;align-content:center;font-size:clamp(30px,4.5vw,58px);line-height:1.45;font-weight:900;overflow-wrap:anywhere;word-break:normal;margin:8px 0 20px;white-space:pre-line;color:#344464;padding:8px}
+.llCurrChoices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;width:min(100%,820px);margin:0 auto 10px}
+.llAnswer{min-height:88px;background:linear-gradient(135deg,#f3f7ff,#fff);border:3px solid #dce7fc;border-radius:22px;color:#25375e;padding:13px;overflow-wrap:anywhere;font-size:clamp(18px,3vw,32px);font-weight:900;box-shadow:0 6px 12px #24335a13}
+.llAnswer:nth-child(1){border-color:#fbd4a5}.llAnswer:nth-child(2){border-color:#c8e9fb}.llAnswer:nth-child(3){border-color:#dbd3ff}.llAnswer:nth-child(4){border-color:#c2f0d2}
+.llAnswer:hover,.llAnswer:focus-visible{background:#e8f7ff;transform:translateY(-1px)}
+.llCurrDropHint{color:#7256ba;font-size:14px;font-weight:900;background:#f3ebff;border:2px dashed #c4adfa;border-radius:13px;padding:15px;margin-bottom:11px}
+.llFeedback{font-size:22px;font-weight:900;min-height:32px;margin:8px 0}.llFeedback.good{color:#138458}.llFeedback.wrong{color:#da4b54}
+.llHintBtn{border:0;background:#ffefc9;color:#876419;border-radius:14px;min-height:44px;padding:10px 16px;font-weight:900;font-size:14px;margin-top:auto}
+.llHintText{font-size:14px;color:#5f6e88;margin:7px 0 0;min-height:16px;font-weight:700}
+.llCurrBottom{border:1px solid #e6eafa;background:#fff;border-radius:20px;padding:15px 20px;margin-top:auto}
+.llCurrBottomHeader{display:flex;justify-content:space-between;gap:12px;font-size:14px;margin-bottom:11px}
+.llCurrBarTrack{height:10px;background:#edf0f8;border-radius:30px;overflow:hidden}
+.llCurrBar{height:100%;background:linear-gradient(90deg,#19b990,#49a8ff);border-radius:30px;width:0;transition:width .25s}
+.llCurrLevelDots{display:grid;grid-template-columns:repeat(10,minmax(0,1fr));gap:5px;margin-top:11px}
+.llLevelDot{height:8px;border-radius:30px;background:#e5e9f2}.llLevelDot.done{background:#1fc394}.llLevelDot.now{background:#ffbe55}
+.llCurrCelebration{text-align:center;background:#fff;border-radius:25px;padding:45px 20px;box-shadow:0 9px 25px #20334f14}
+.llCurrCelebration h2{font-size:clamp(25px,5vw,42px)}.llCurrCelebration p{color:#61748c;font-weight:800}
+.llDragGhost{pointer-events:none;position:fixed;transform:translate(-50%,-50%);z-index:1000;background:#fff;border:3px solid #7a77ee;border-radius:14px;padding:13px 17px;font-size:26px;font-weight:900;box-shadow:0 13px 26px #26395d3b}
+.llVoiceControls{background:#f4f8ff;border-radius:20px;padding:18px;margin:19px 0;border:1px solid #e1e8fb}
+.llVoiceControls h3{margin:0 0 6px;font-size:20px}
+.llVoiceControls p{font-size:13px;color:#6a7690;line-height:1.5}
+.llVoiceControls input[type=range]{width:100%;min-height:34px;accent-color:#7864f2}
+.llVoicePreview{border:0;border-radius:15px;background:#e1dcff;color:#4e40ad;padding:13px;font-weight:900;min-height:51px;width:100%}
+.llCurriculumHistory{margin-top:19px;padding-top:12px;border-top:1px solid #e8eafa}
+.llCurriculumHistory h3{font-size:20px}
+.llHistoryRow{border:1px solid #e9ecf5;border-radius:13px;padding:10px 13px;margin:7px 0;display:grid;gap:4px}
+.llHistoryRow small{color:#6a7991;font-weight:700}
+body.isGameActive .siteHeader{display:none!important}
+@media(min-width:1200px){.llTopicGrid{grid-template-columns:repeat(7,minmax(0,1fr))}}
+@media(max-width:1140px){.llTopicGrid{grid-template-columns:repeat(5,minmax(0,1fr))}}
+@media(max-width:820px){.llTopicGrid{grid-template-columns:repeat(4,minmax(0,1fr))}.llStudioBadge{display:none}}
+@media(max-width:640px){.llTopicGrid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.llTopic{min-height:157px}.llStudio{padding:14px;border-radius:20px}.llCurriculumTools{display:grid;grid-template-columns:1fr;gap:10px}.llSubjects button{min-width:0;flex:1}.llGradeLabel{width:100%}.llCurrResume{flex-direction:column;align-items:stretch}.llCurrPlay{min-height:calc(100dvh - 80px)}.llCurrTop div{font-size:16px}.llCurrTop button{font-size:13px;padding:9px;min-height:49px}.llCurrMain{padding:15px;border-radius:20px}.llCurrVisual{font-size:clamp(24px,7vw,42px);min-height:130px}.llCurrChoices{gap:9px}.llAnswer{min-height:85px;border-radius:16px;font-size:clamp(16px,5.7vw,25px);padding:7px}.llStudioHeader h2{font-size:26px}}
+@media(max-width:390px){.llTopicGrid{gap:7px}.llTopic{padding:11px 9px;min-height:151px}.llTopic strong{font-size:14px}.llCurrVisual{font-size:24px}}
+@media(prefers-reduced-motion:reduce){.llTopic,.llAnswer{transition:none!important}}
