@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="css/style-v20261030-01.css" />
   <link rel="stylesheet" href="css/experience-v20261030-02.css" />
   <link rel="stylesheet" href="css/layout-v20261030-03.css" />
+  <link rel="stylesheet" href="css/studio-v3.css" />
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-GM5VNJ5795"></script>
   <script>
@@ -23,7 +24,7 @@
   </script>
 </head>
 <body>
-  <!-- Build: v20261030-03 | Full-width home and bottom game progress -->
+  <!-- Build: v20261030-04 | Little Learning 3.0 grade curriculum and voice -->
   <main class="app">
       <header class="siteHeader">
         <button class="brandHome" id="brandHomeBtn" type="button" aria-label="Go to Little Learning home">
@@ -59,6 +60,37 @@
         <button id="continueGame" class="continueGame" type="button">▶ Continue Playing</button>
         <div id="resumeDescription" class="resumeDescription" aria-live="polite"></div>
       </div>
+
+      <section id="llStudio" class="llStudio" aria-label="Learning adventures">
+        <div class="llStudioHeader">
+          <div><span class="llEyebrow">✨ Your learning journey</span><h2>Explore, practice & grow</h2>
+            <p>Play original interactive lessons — no videos, no signup.</p></div>
+          <div class="llStudioBadge">🏅 Kindergarten – Grade 6</div>
+        </div>
+        <div class="llCurriculumTools">
+          <div class="llSubjects" role="group" aria-label="Choose subject">
+            <button type="button" data-ll-subject="math" class="isSelected" aria-pressed="true">🔢 Math</button>
+            <button type="button" data-ll-subject="english" aria-pressed="false">🔤 English</button>
+          </div>
+          <label class="llGradeLabel" for="llGradeSelect">Learning stage
+            <select id="llGradeSelect" aria-label="Choose school grade">
+              <option value="0">Kindergarten</option><option value="1">Grade 1</option>
+              <option value="2">Grade 2</option><option value="3">Grade 3</option>
+              <option value="4">Grade 4</option><option value="5">Grade 5</option>
+              <option value="6">Grade 6</option>
+            </select>
+          </label>
+        </div>
+        <div class="llCurrResume" id="llCurrResume" hidden>
+          <div><small>🌟 PICK UP WHERE YOU STOPPED</small><strong id="llCurrResumeText">Continue learning</strong></div>
+          <button type="button" class="llPrimary" id="llCurrResumeBtn">▶ Continue Lesson</button>
+        </div>
+        <div class="llTopicHeading"><h3 id="llSelectedGrade">Kindergarten • Math</h3><span id="llTopicCount"></span></div>
+        <div class="llTopicGrid" id="llTopicGrid" aria-label="Learning topics"></div>
+      </section>
+      <details id="llQuickDetails" class="llQuickDetails">
+        <summary>🎮 Quick Play <span>12 familiar games</span></summary>
+
       <div class="homeSectionHeading"><h2>🎮 Choose a game</h2><span>12 fun activities</span></div>
       <div class="gameGrid">
         <button class="game math" data-game="math"><span>Math<small>Count and add</small></span><b>🔢</b></button>
@@ -74,6 +106,7 @@
         <button class="game matchalpha" data-game="matchalpha"><span>Match Alphabets<small>Draw line to picture</small></span><b>🔤</b></button>
         <button class="game findodd" data-game="findodd"><span>Find Odd Numbers<small>Find different number</small></span><b>🔍</b></button>
       </div>
+      </details>
     </section>
 
 
@@ -141,6 +174,33 @@
       </div>
     </section>
 
+
+    <section class="page llCurriculumPage" id="curriculumPage" aria-label="Learning lesson">
+      <div class="llCurrTop">
+        <button id="llCurrHome" type="button" aria-label="Return to learning home">🏠 Home</button>
+        <div id="llCurrTitle">Learning Adventure</div>
+        <button id="llCurrSound" type="button" aria-label="Repeat question">🔊 Repeat</button>
+      </div>
+      <div id="llCurrPlay" class="llCurrPlay">
+        <div class="llCurrMain">
+          <div class="llCurrTopline"><span id="llCurrGrade">Kindergarten</span><span id="llCurrLevel">Level 1/10</span></div>
+          <h2 id="llCurrPrompt">Let's learn!</h2>
+          <div class="llCurrVisual" id="llCurrVisual"></div>
+          <div id="llCurrDropHint" class="llCurrDropHint" hidden>⬇️ Drag or tap the correct answer below</div>
+          <div id="llCurrChoices" class="llCurrChoices"></div>
+          <div id="llCurrFeedback" class="llFeedback" aria-live="polite"></div>
+          <button id="llHintBtn" type="button" class="llHintBtn">💡 Help me understand</button>
+          <p id="llHintText" aria-live="polite" class="llHintText"></p>
+        </div>
+        <div class="llCurrBottom">
+          <div class="llCurrBottomHeader"><strong id="llCurrQuestion">Question 1/10</strong><strong id="llCurrScore">⭐ 0</strong></div>
+          <div class="llCurrBarTrack"><div class="llCurrBar" id="llCurrBar"></div></div>
+          <div class="llCurrLevelDots" id="llCurrLevelDots" aria-label="Progress through 10 learning levels"></div>
+        </div>
+      </div>
+      <div id="llCurrCelebration" class="llCurrCelebration" hidden></div>
+    </section>
+
     <section class="page miniPage" id="profilePage" aria-label="Learner profile">
       <div class="miniPageCard">
         <button class="backLink" id="profileBack" type="button">← Home</button>
@@ -164,6 +224,17 @@
             <option value="30">30</option><option value="40">40</option><option value="50">50</option>
           </select>
           <p class="profileHint">Changes to question count apply when starting a new game. Current saved games keep their original question count. Your nickname and learning progress stay on this device.</p>
+
+          <div class="llVoiceControls">
+            <h3>🎙️ Friendly teacher voice</h3>
+            <p>Choose a natural-sounding English voice available on this device. Female-labelled voices are marked ♀ when identifiable.</p>
+            <label class="fieldLabel" for="llVoiceSelect">Voice</label>
+            <select class="profileSelect" id="llVoiceSelect"><option value="auto">Best available English voice</option></select>
+            <label class="fieldLabel" for="llVoiceRate">Speaking speed <span id="llVoiceRateLabel">0.92×</span></label>
+            <input type="range" id="llVoiceRate" min="0.70" max="1.12" step="0.02" value="0.92" />
+            <p id="llVoiceInfo" class="profileHint">Available voices depend on the browser and device.</p>
+            <button id="llVoicePreview" class="llVoicePreview" type="button">🔊 Hear voice preview</button>
+          </div>
           <button type="submit" class="primaryAction">Save Profile ⭐</button>
           <p id="profileMessage" role="status" aria-live="polite" class="profileHint"></p>
         </form>
@@ -179,6 +250,7 @@
           <div class="historyStat"><strong id="historyGames">0</strong><small>Games played</small></div>
         </div>
         <div id="historyItems" class="historyList" aria-live="polite"></div>
+      <div id="llCurriculumHistory" class="llCurriculumHistory" aria-label="Grade lesson achievements"></div>
       </div>
     </section>
 
@@ -200,6 +272,10 @@
   <script src="js/app-v20261030-01.js"></script>
   <script src="js/experience-v20261030-02.js"></script>
   <script src="js/navigation-v20261030-03.js"></script>
+  <script src="curriculum/catalog-v3.js"></script>
+  <script src="curriculum/questions-v3.js"></script>
+  <script src="js/voice-v3.js"></script>
+  <script src="js/curriculum-v3.js"></script>
 <script>
   if('serviceWorker' in navigator && location.protocol.startsWith('http')){
     window.addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
