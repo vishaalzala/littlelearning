@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="css/experience-v20261030-02.css" />
   <link rel="stylesheet" href="css/layout-v20261030-03.css" />
   <link rel="stylesheet" href="css/studio-v3.css" />
+  <link rel="stylesheet" href="css/adventure-home-v31.css" />
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-GM5VNJ5795"></script>
   <script>
@@ -24,12 +25,13 @@
   </script>
 </head>
 <body>
-  <!-- Build: v20261030-04 | Little Learning 3.0 grade curriculum and voice -->
+  <!-- Build: v20261030-05 | Little Learning Adventure illustrated home -->
   <main class="app">
       <header class="siteHeader">
         <button class="brandHome" id="brandHomeBtn" type="button" aria-label="Go to Little Learning home">
-          <span class="brandSymbol" aria-hidden="true">🌈</span>
-          <span class="brandCopy"><strong>Little Learning</strong><small>Tap, count, speak and play!</small></span>
+          <span class="brandApple" aria-hidden="true">🍎</span>
+          <span class="brandCopy"><strong>Little Learning</strong><small>Play • Learn • Grow</small></span>
+          <span class="brandFox" aria-hidden="true"><img src="assets/fox-mascot-v31.svg" alt="" /></span>
         </button>
         <div class="profileBox" id="profileBox">
           <button id="profileMenuBtn" class="profileTrigger" type="button" aria-label="Open learner menu" aria-haspopup="true" aria-expanded="false">🦊</button>
@@ -44,33 +46,47 @@
     <section id="homePage" class="page active">
 
 
-      <div class="hero">
+      <div class="hero adventureHero">
         <div class="heroGreeting">
-          <span class="helloKicker">✨ Your happy learning adventure</span>
+          <span class="helloKicker">🌟 Welcome to your learning adventure</span>
           <h1 id="helloHeading">Hello, Little Star! 👋</h1>
           <p>Ready to learn something new today?</p>
           <p class="freeLine">100% free, No signup required!</p>
         </div>
-        <div id="heroArtwork" class="heroArtwork" aria-hidden="true">🌈 ⭐ 📚</div>
+        <div class="adventureHeroScene" aria-hidden="true">
+          <div class="adventureCloud adventureCloudOne"></div>
+          <div class="adventureCloud adventureCloudTwo"></div>
+          <span class="adventureHeroStar">⭐</span>
+          <span class="adventureHeroBooks">📚</span>
+          <img src="assets/fox-mascot-v31.svg" alt="" class="adventureHeroFox" />
+        </div>
       </div>
       <select id="levelSelect" hidden aria-hidden="true"><option value="1">Level 1</option></select>
 
       <div class="resumePanel" id="resumePanel" hidden>
-        <div class="resumeEyebrow">Pick up where you stopped</div>
+        <div class="resumeEyebrow">🚀 Continue where you stopped</div>
         <button id="continueGame" class="continueGame" type="button">▶ Continue Playing</button>
         <div id="resumeDescription" class="resumeDescription" aria-live="polite"></div>
       </div>
 
+      <div class="llCurrResume adventureResume" id="llCurrResume" hidden>
+        <div class="adventureResumeIntro">
+          <span class="resumeRocket" aria-hidden="true">🚀</span>
+          <div><small>✨ CONTINUE YOUR QUEST</small><strong id="llCurrResumeText">Pick up where you stopped</strong></div>
+        </div>
+        <button type="button" class="llPrimary" id="llCurrResumeBtn">▶ Continue Lesson</button>
+      </div>
       <section id="llStudio" class="llStudio" aria-label="Learning adventures">
         <div class="llStudioHeader">
-          <div><span class="llEyebrow">✨ Your learning journey</span><h2>Explore, practice & grow</h2>
-            <p>Play original interactive lessons — no videos, no signup.</p></div>
+          <div class="llStudioHeading"><span class="llEyebrow">✨ LITTLE LEARNERS’ ADVENTURE ✨</span>
+            <h2>Explore, Practice &amp; Grow!</h2>
+            <p>Choose a subject, pick your learning stage, and begin your quest.</p></div>
           <div class="llStudioBadge">🏅 Kindergarten – Grade 6</div>
         </div>
         <div class="llCurriculumTools">
           <div class="llSubjects" role="group" aria-label="Choose subject">
-            <button type="button" data-ll-subject="math" class="isSelected" aria-pressed="true">🔢 Math</button>
-            <button type="button" data-ll-subject="english" aria-pressed="false">🔤 English</button>
+            <button type="button" data-ll-subject="math" class="isSelected" aria-pressed="true"><span aria-hidden="true">🧮</span><strong>Math</strong></button>
+            <button type="button" data-ll-subject="english" aria-pressed="false"><span aria-hidden="true">📖</span><strong>English</strong></button>
           </div>
           <label class="llGradeLabel" for="llGradeSelect">Learning stage
             <select id="llGradeSelect" aria-label="Choose school grade">
@@ -81,15 +97,21 @@
             </select>
           </label>
         </div>
-        <div class="llCurrResume" id="llCurrResume" hidden>
-          <div><small>🌟 PICK UP WHERE YOU STOPPED</small><strong id="llCurrResumeText">Continue learning</strong></div>
-          <button type="button" class="llPrimary" id="llCurrResumeBtn">▶ Continue Lesson</button>
-        </div>
+
         <div class="llTopicHeading"><h3 id="llSelectedGrade">Kindergarten • Math</h3><span id="llTopicCount"></span></div>
         <div class="llTopicGrid" id="llTopicGrid" aria-label="Learning topics"></div>
       </section>
+      <section class="adventureQuickFeatures" aria-label="Quick Play favourites">
+        <div class="adventureQuickHeading"><div><span>⭐ FUN &amp; GAMES</span><h2>Quick Play</h2></div><p>Jump into a favourite game!</p></div>
+        <div class="adventureQuickShowcase">
+          <button type="button" class="quickFeature featureMath" data-featured-game="math"><span class="quickFeatureIcon" aria-hidden="true">🍎</span><strong>Math Fun</strong><small>Count &amp; add</small></button>
+          <button type="button" class="quickFeature featureEnglish" data-featured-game="english"><span class="quickFeatureIcon" aria-hidden="true">🦊</span><strong>Word Adventure</strong><small>Find the word</small></button>
+          <button type="button" class="quickFeature featureCircle" data-featured-game="find"><span class="quickFeatureIcon" aria-hidden="true">🎯</span><strong>Find &amp; Circle</strong><small>Spot the picture</small></button>
+          <button type="button" class="quickFeature featureMatch" data-featured-game="matchnum"><span class="quickFeatureIcon" aria-hidden="true">🧩</span><strong>Match Numbers</strong><small>Count &amp; connect</small></button>
+        </div>
+      </section>
       <details id="llQuickDetails" class="llQuickDetails">
-        <summary>🎮 Quick Play <span>12 familiar games</span></summary>
+        <summary><span class="quickDetailsIcon" aria-hidden="true">🎮</span><strong>Explore all 12 Quick Play games</strong><span class="quickDetailsCaption">Tap to see all activities</span></summary>
 
       <div class="homeSectionHeading"><h2>🎮 Choose a game</h2><span>12 fun activities</span></div>
       <div class="gameGrid">
@@ -276,6 +298,7 @@
   <script src="curriculum/questions-v3.js"></script>
   <script src="js/voice-v3.js"></script>
   <script src="js/curriculum-v3.js"></script>
+  <script src="js/adventure-home-v31.js"></script>
 <script>
   if('serviceWorker' in navigator && location.protocol.startsWith('http')){
     window.addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));

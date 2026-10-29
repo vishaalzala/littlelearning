@@ -1,0 +1,395 @@
+/* Little Learning Adventure — original, illustration-led home page.
+   All changes are visual only; game engines, learning history and progress keys stay intact. */
+:root{--adventure-ink:#273b5a;--adventure-outline:#e6c3a8;--adventure-shadow:0 9px 18px rgba(96,89,110,.13)}
+body{
+  background:
+    radial-gradient(ellipse 140px 70px at 5% 17%,rgba(255,255,255,.93) 0 45%,transparent 48%),
+    radial-gradient(ellipse 115px 53px at 87% 24%,rgba(255,255,255,.78) 0 44%,transparent 47%),
+    radial-gradient(circle at 5% 7%,#ffedc6,transparent 37%),
+    radial-gradient(circle at 95% 6%,#d1f5fa,transparent 37%),
+    linear-gradient(145deg,#fff5df,#f5fbff 62%,#fff0e4)!important;
+  color:var(--adventure-ink);
+  font-family:"Trebuchet MS",ui-rounded,system-ui,sans-serif;
+}
+.app{padding:10px clamp(10px,1.6vw,26px) 28px}
+.siteHeader{
+  position:relative;
+  min-height:93px;
+  margin-bottom:10px;
+  border:2px solid #ffffff;
+  border-radius:28px;
+  background:linear-gradient(105deg,#fff4d9 0%,#f4faff 42%,#e7fafb 100%);
+  box-shadow:0 9px 23px #8296b726;
+  justify-content:center;
+  overflow:visible;
+  padding:10px 85px;
+}
+.siteHeader:before,.siteHeader:after{content:"✦";position:absolute;color:#f9c75f;font-size:24px;opacity:.7;pointer-events:none}
+.siteHeader:before{left:14%;top:18%}
+.siteHeader:after{right:18%;top:45%;color:#ff9e9b}
+.siteHeader .brandHome{
+  flex:none;
+  width:auto;
+  max-width:calc(100% - 90px);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  margin:0 auto;
+  gap:13px;
+  min-height:67px;
+}
+.siteHeader .brandApple{font-size:49px;filter:drop-shadow(0 3px 2px #d86e3928);line-height:1}
+.siteHeader .brandCopy{text-align:center;flex:0 1 auto}
+.siteHeader .brandCopy strong{
+  color:#2c69a9;
+  font-size:clamp(30px,3.5vw,52px);
+  letter-spacing:-.05em;
+  font-weight:1000;
+  line-height:.99;
+  text-shadow:2px 3px 0 #fff,0 5px 8px #4d62a424;
+}
+.siteHeader .brandCopy small{
+  display:block;
+  margin-top:5px;
+  color:#6e7a98;
+  font-size:clamp(10px,1.1vw,15px);
+  letter-spacing:.07em;
+}
+.siteHeader .brandFox{display:flex;width:82px;height:78px;flex-shrink:0;align-items:center;justify-content:center;overflow:hidden}
+.siteHeader .brandFox img{height:116px;width:116px;max-width:none;object-fit:contain;transform:translateY(17px)}
+.siteHeader .profileBox{position:absolute;right:19px;top:50%;transform:translateY(-50%);z-index:80}
+.siteHeader .profileTrigger{width:61px;height:61px;background:#e4f7fb;border:4px solid white;font-size:31px;box-shadow:0 3px 0 #b7d9e5,0 5px 14px #5365a21b}
+/* Hero with an original graduate-fox SVG and floating learning stickers. */
+#homePage .adventureHero{
+  position:relative;min-height:160px;max-height:none;
+  overflow:hidden;
+  margin:0 0 12px;
+  padding:20px clamp(22px,3vw,48px);
+  align-items:center;
+  border:2px solid #fff;
+  border-radius:28px;
+  background:
+    radial-gradient(circle at 71% 30%,#fff9da 0 9%,transparent 25%),
+    linear-gradient(110deg,#fff3d6 0%,#edf8ff 57%,#dbfaea 100%);
+  box-shadow:0 8px 23px #6b87af19;
+}
+.adventureHero:before{content:"✦  ✧";position:absolute;top:16px;left:46%;color:#f1c46f;font-size:19px;letter-spacing:52px;opacity:.7}
+#homePage .heroGreeting{flex:1 1 auto;position:relative;z-index:2}
+#homePage .adventureHero .helloKicker{font-size:clamp(12px,1.2vw,16px);font-weight:900;color:#6e65b2;letter-spacing:.01em;margin-bottom:5px}
+#homePage .adventureHero h1{font-size:clamp(26px,3.15vw,46px);color:#2d4670;letter-spacing:-.045em;margin:2px 0 6px}
+#homePage .adventureHero p{font-size:clamp(13px,1.2vw,17px);color:#51647e;line-height:1.4}
+#homePage .adventureHero .freeLine{color:#168b6b;font-weight:900;margin-top:5px}
+.adventureHeroScene{position:absolute;right:3%;bottom:-15px;width:min(39%,550px);height:215px;pointer-events:none}
+.adventureHeroFox{position:absolute;bottom:-19px;left:27%;height:227px;width:auto;filter:drop-shadow(1px 8px 5px #4c679027);z-index:3}
+.adventureHeroStar{position:absolute;top:22px;right:9%;font-size:69px;filter:drop-shadow(0 8px 3px #d6a84435)}
+.adventureHeroBooks{position:absolute;right:0;bottom:25px;font-size:66px;filter:drop-shadow(0 8px 4px #536b7e3b)}
+.adventureCloud{position:absolute;width:95px;height:33px;background:#fff;border-radius:40px;opacity:.84;filter:drop-shadow(0 3px 3px #93c3eb18)}
+.adventureCloud:before{content:"";position:absolute;background:#fff;width:45px;height:43px;border-radius:50%;left:16px;bottom:7px}
+.adventureCloud:after{content:"";position:absolute;background:#fff;width:41px;height:35px;border-radius:50%;left:45px;bottom:4px}
+.adventureCloudOne{top:35px;left:2%;transform:scale(.83)}
+.adventureCloudTwo{top:7px;right:30%;transform:scale(.55)}
+/* Clear continue ribbons for current curriculum and Quick Play saves */
+#homePage .resumePanel,#homePage .llCurrResume.adventureResume{
+  position:relative;
+  width:100%;max-width:none;
+  background:linear-gradient(95deg,#b6e9ff 0%,#78c9ff 36%,#8bddf3 67%,#b4edfa 100%);
+  border:2px solid #78b6e9;
+  border-radius:24px;
+  padding:11px clamp(12px,2vw,29px);
+  box-shadow:inset 0 3px 0 #ffffff8a,0 7px 14px #3b80a633;
+  margin:0 0 11px;
+  min-height:75px;
+  align-items:center;
+}
+#homePage .resumePanel{grid-template-columns:minmax(195px,1fr) minmax(180px,.8fr) minmax(200px,1fr)}
+#homePage .resumePanel .resumeEyebrow{font-size:clamp(13px,1.15vw,17px);font-weight:900;letter-spacing:.01em;text-transform:none;color:#205a8b}
+#homePage .resumePanel .resumeDescription{font-size:13px;color:#205a8b;font-weight:900}
+#homePage .resumePanel .continueGame,
+#homePage .llCurrResume .llPrimary{
+  background:linear-gradient(180deg,#81d67b,#2fae6a);
+  color:#fff;border:2px solid #e1ffe8;
+  box-shadow:0 4px 0 #138857,0 7px 12px #155c6e34;
+  text-shadow:0 2px 2px #1f724670;
+  border-radius:999px;
+  padding:10px 22px;
+  min-height:52px;
+  font-size:clamp(15px,1.4vw,20px);
+  font-weight:900;white-space:normal;
+}
+#homePage .llCurrResume.adventureResume{display:flex;justify-content:space-between;gap:10px}
+#homePage .llCurrResume[hidden]{display:none!important}
+.adventureResumeIntro{display:flex;align-items:center;gap:14px}
+.adventureResumeIntro>div{display:grid;gap:3px}
+.adventureResumeIntro strong{font-size:clamp(14px,1.3vw,18px);color:#214c83}
+.adventureResumeIntro small{color:#3763a1;font-size:11px;font-weight:1000;letter-spacing:.08em}
+.resumeRocket{font-size:46px;filter:drop-shadow(0 4px 3px #5891b54d)}
+/* Subject and curriculum area */
+#homePage .llStudio{
+  background:transparent;
+  border:0;
+  box-shadow:none;
+  border-radius:0;
+  overflow:visible;
+  padding:5px 0 9px;
+  margin:4px 0 7px;
+}
+#homePage .llStudio:before{display:none}
+#homePage .llStudioHeader{margin:2px 5px 14px;gap:15px;position:relative;align-items:end}
+#homePage .llStudioHeading{text-align:left}
+#homePage .llStudioHeader h2{
+  display:block;
+  margin:4px 0;
+  font-size:clamp(28px,3vw,45px);
+  line-height:1.1;
+  color:#314e86;
+  font-weight:1000;
+  letter-spacing:-.045em;
+  text-shadow:2px 3px 0 #fff;
+}
+#homePage .llStudioHeader .llEyebrow{font-size:clamp(12px,1.05vw,15px);color:#8b61a8;font-weight:1000;letter-spacing:.055em}
+#homePage .llStudioHeader p{font-size:clamp(12px,1.1vw,15px);font-weight:700;color:#516b85;margin:6px 0 0}
+#homePage .llStudioBadge{background:#e9f0ff;border:2px solid #fff;color:#3a6caa;border-radius:25px;padding:12px 17px;box-shadow:0 3px 9px #5c79aa1d;font-size:13px}
+#homePage .llCurriculumTools{display:flex;align-items:center;justify-content:space-between;gap:15px;flex-wrap:wrap;margin:0 5px 15px}
+#homePage .llSubjects{display:flex;gap:12px;padding:0;background:none;border-radius:0;box-shadow:none}
+#homePage .llSubjects button{
+  display:flex;align-items:center;justify-content:center;gap:13px;
+  min-width:clamp(172px,17vw,262px);
+  min-height:78px;padding:11px 22px;
+  border:4px solid white;
+  border-radius:24px;
+  box-shadow:inset 0 3px 0 #ffffffc5,0 5px 0 #c6b5ab,0 11px 16px #4d647f1c;
+  text-shadow:0 2px 0 #ffffffb3;
+  color:#22476a;
+  background:linear-gradient(140deg,#ffefcf,#ffe2d0);
+  font-size:clamp(22px,2vw,30px);
+  font-weight:1000;
+  transition:transform .15s,box-shadow .15s;
+}
+#homePage .llSubjects button span{font-size:clamp(29px,2.9vw,43px);filter:drop-shadow(0 4px 1px #62648428)}
+#homePage .llSubjects button[data-ll-subject="english"]{background:linear-gradient(140deg,#e3efff,#c9dfff)}
+#homePage .llSubjects button.isSelected{border-color:#fff;outline:3px solid #78adff;color:#224a85;transform:translateY(-2px);box-shadow:0 5px 0 #6b91ce,0 9px 17px #5e82b73b}
+#homePage .llSubjects button:hover{transform:translateY(-3px)}
+#homePage .llGradeLabel{position:relative;min-width:217px;font-size:14px;font-weight:900;color:#3a577d;gap:6px;padding-right:35px}
+#homePage .llGradeLabel:after{content:"📚";position:absolute;right:-3px;bottom:2px;font-size:35px;pointer-events:none}
+#homePage .llGradeLabel select{
+  appearance:auto;background:linear-gradient(#fff,#fff8eb);border:2px solid #f6c9a6;
+  box-shadow:0 4px 0 #d9a68c,0 6px 12px #77719d21;
+  border-radius:17px;min-height:57px;padding:12px 15px;
+  color:#355479;font-weight:900;font-size:clamp(16px,1.4vw,21px);
+}
+#homePage .llTopicHeading{margin:10px 7px 13px;align-items:center}
+#homePage .llTopicHeading h3{font-size:clamp(21px,2.1vw,31px);font-weight:1000;color:#273b5e}
+#homePage .llTopicHeading>span{font-size:clamp(12px,1.1vw,15px);font-weight:900;color:#667a97;background:#fff8e7;border:1px solid #f1e1c1;border-radius:999px;padding:8px 14px}
+#homePage .llTopicGrid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:clamp(9px,1.1vw,17px)}
+#homePage .llTopic.adventure-topic{
+  position:relative;display:flex;flex-direction:column;align-items:stretch;
+  min-width:0;
+  padding:11px 10px 10px;
+  min-height:clamp(195px,16.2vw,235px);
+  border:2px solid #e8c6b6;
+  border-radius:23px;
+  background:linear-gradient(165deg,#fff 0%,#fffefd 100%);
+  box-shadow:0 6px 0 #e8d7c9,0 11px 18px #5a637e19;
+  color:#2a3a58;text-align:left;
+  overflow:hidden;
+  transition:transform .15s,box-shadow .15s;
+}
+#homePage .llTopic.adventure-topic:nth-child(4n + 2){border-color:#bad9ed;box-shadow:0 6px 0 #cfe1ed,0 11px 18px #5a637e19}
+#homePage .llTopic.adventure-topic:nth-child(4n + 3){border-color:#dbcef2;box-shadow:0 6px 0 #e6ddf4,0 11px 18px #5a637e19}
+#homePage .llTopic.adventure-topic:nth-child(4n + 4){border-color:#b9dfc8;box-shadow:0 6px 0 #d9e9d3,0 11px 18px #5a637e19}
+#homePage .llTopic.adventure-topic:hover{transform:translateY(-4px);box-shadow:0 10px 0 #dfd2c4,0 16px 25px #4b617e27}
+#homePage .llTopic.adventure-topic .llTopicIcon{display:none}
+#homePage .llTopic.adventure-topic .adventure-title{
+  display:block;order:1;font-size:clamp(14px,1.1vw,18px);
+  font-weight:1000;color:#273854;line-height:1.19;
+  min-height:36px;margin:1px 21px 3px 2px;
+  overflow-wrap:break-word;
+}
+#homePage .llTopic.adventure-topic .llTopicStatus{
+  order:3;display:block;margin:3px 2px 6px;padding:0;
+  font-size:clamp(11px,.95vw,13px);line-height:1.25;
+  color:#476482;font-weight:900;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+#homePage .llTopic.adventure-topic .llTopicProgress{order:4;flex-shrink:0;height:8px;background:#ecebf0;margin:0 2px;border-radius:50px}
+#homePage .llTopic.adventure-topic .llTopicProgress span{background:linear-gradient(90deg,#3abf86,#e7b349)}
+.adventure-number{position:absolute;right:10px;top:9px;z-index:2;background:#fff9e6;border-radius:99px;padding:3px 5px;color:#a68b7d;font-size:9px;font-weight:1000}
+/* Original mini-landscape illustration inside every learning card */
+#homePage .llTopic.adventure-topic .adventure-art{
+  order:2;display:block;position:relative;overflow:hidden;isolation:isolate;flex:1 1 auto;
+  min-height:90px;height:clamp(100px,7.6vw,134px);width:100%;
+  border-radius:14px;
+  background:var(--scene-sky);
+  border:1px solid #fff;
+  box-shadow:inset 0 2px 2px #ffffff99;
+}
+.scene-sky{position:absolute;inset:0;background:linear-gradient(180deg,var(--scene-sky),#fffefa 86%)}
+.scene-sun{position:absolute;width:39px;height:39px;right:26px;top:13px;border-radius:50%;background:var(--scene-accent);box-shadow:0 0 0 7px #ffffff5a}
+.scene-cloud{position:absolute;border-radius:40px;background:#fff;opacity:.8;width:63px;height:19px}
+.scene-cloud:before{content:"";width:28px;height:27px;position:absolute;left:9px;bottom:3px;background:#fff;border-radius:50%}
+.scene-cloud:after{content:"";width:31px;height:27px;position:absolute;left:27px;bottom:0;background:#fff;border-radius:50%}
+.scene-cloud-a{left:9px;top:19px;transform:scale(.65)}
+.scene-cloud-b{right:48px;top:44px;transform:scale(.45)}
+.scene-hills{position:absolute;left:-12%;right:-12%;bottom:-53px;height:115px;border-radius:50% 55% 0 0;background:var(--scene-ground);box-shadow:inset 0 14px 0 #ffffff20;transform:rotate(-3deg)}
+.scene-hills:after{content:"";position:absolute;right:-10%;bottom:-8px;width:65%;height:115px;border-radius:80% 80% 0 0;background:#ffffff3e;transform:rotate(13deg)}
+.scene-actors{position:absolute;inset:8px 5px 4px;z-index:3;display:flex;align-items:center;justify-content:center;gap:clamp(2px,.9vw,11px)}
+.scene-sprite{position:relative;display:inline-block;flex:0 1 auto;line-height:1.1;font-size:clamp(25px,3vw,53px);filter:drop-shadow(0 5px 2px #5e66622c);transform:rotate(-6deg)}
+.scene-sprite:nth-child(2){transform:rotate(5deg) translateY(-8px)}
+.scene-sprite:nth-child(3){transform:rotate(-7deg) translateY(5px)}
+.scene-sprite:nth-child(4){transform:rotate(8deg) translateY(-5px)}
+.scene-sprite:nth-child(5){transform:rotate(-2deg) translateY(6px)}
+.scene-confetti{position:absolute;inset:0;z-index:4;pointer-events:none;color:#f29d8f}
+.scene-sparkle{position:absolute;font-weight:1000;font-size:20px;text-shadow:0 1px 0 #fff}
+.scene-sparkle:nth-child(1){top:6px;left:52%}
+.scene-sparkle:nth-child(2){right:11px;top:30px;color:#f3c84a}
+.scene-sparkle:nth-child(3){left:10px;bottom:7px;color:#8ac4ff}
+@media(min-width:1700px){
+  #homePage .llTopicGrid{grid-template-columns:repeat(7,minmax(0,1fr))}
+  #homePage .llTopic.adventure-topic{min-height:215px}
+}
+@media(min-width:1150px) and (max-width:1399px){
+  #homePage .llTopicGrid{grid-template-columns:repeat(5,minmax(0,1fr))}
+}
+@media(min-width:800px) and (max-width:1149px){
+  #homePage .llTopicGrid{grid-template-columns:repeat(4,minmax(0,1fr))}
+  #homePage .llTopic.adventure-topic{min-height:194px}
+}
+/* Featured Quick Play is always visible; all 12 original games remain under expandable details. */
+.adventureQuickFeatures{padding:8px 1px 4px;margin:12px 0 0}
+.adventureQuickHeading{display:flex;align-items:end;gap:10px;justify-content:space-between;margin:0 9px 13px}
+.adventureQuickHeading span{display:block;color:#ac7598;font-size:12px;font-weight:1000;letter-spacing:.09em}
+.adventureQuickHeading h2{font-size:clamp(24px,2.7vw,37px);font-weight:1000;margin:1px 0;color:#2f436a}
+.adventureQuickHeading p{margin:0;color:#6f7991;font-size:14px;font-weight:800}
+.adventureQuickShowcase{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(9px,1.2vw,16px)}
+.quickFeature{
+  position:relative;isolation:isolate;overflow:hidden;
+  display:flex;flex-direction:column;align-items:flex-start;justify-content:center;
+  min-height:clamp(115px,11vw,156px);border:3px solid #fff;
+  border-radius:25px;padding:17px 20px 15px clamp(83px,8.5vw,130px);
+  text-align:left;color:#fff;box-shadow:0 6px 0 #9bb2cb,0 12px 16px #51698d27;
+  text-shadow:0 3px 2px #293c6480;transition:transform .17s;
+}
+.quickFeature:hover{transform:translateY(-3px)}
+.quickFeature:before{content:"";position:absolute;z-index:-1;right:-35px;top:-35px;width:160px;height:160px;border-radius:50%;background:#ffffff21}
+.quickFeature:after{content:"✧  ✦  ✧";position:absolute;z-index:-1;right:10px;bottom:9px;color:#fff8be;font-size:19px;letter-spacing:7px}
+.quickFeature strong{font-size:clamp(17px,1.8vw,27px);font-weight:1000;line-height:1.05}
+.quickFeature small{font-size:clamp(11px,.9vw,13px);font-weight:900;margin-top:8px}
+.quickFeatureIcon{position:absolute;left:14px;bottom:5px;font-size:clamp(55px,6.4vw,96px);line-height:1.2;filter:drop-shadow(0 5px 3px #24344b55)}
+.featureMath{background:linear-gradient(125deg,#69b9eb,#3a8cd6)}
+.featureEnglish{background:linear-gradient(125deg,#9fd077,#4cb27c)}
+.featureCircle{background:linear-gradient(125deg,#be8ee9,#8974d9)}
+.featureMatch{background:linear-gradient(125deg,#f8bb76,#f18486)}
+#homePage .llQuickDetails{
+  margin:18px 0 4px;padding:0 17px;background:#ffffffbf;
+  border:2px dashed #ccdcf3;border-radius:22px;
+}
+#homePage .llQuickDetails>summary{
+  min-height:63px;display:flex;align-items:center;gap:12px;
+  padding:11px 3px;font-size:clamp(17px,1.5vw,22px);
+  color:#36517a;font-weight:1000;
+}
+#homePage .llQuickDetails>summary .quickDetailsIcon{font-size:27px}
+#homePage .llQuickDetails>summary .quickDetailsCaption{font-size:12px;font-weight:800;margin-left:auto;margin-right:14px;color:#7586a4}
+#homePage .llQuickDetails .gameGrid{grid-template-columns:repeat(6,minmax(0,1fr));gap:10px;margin:0 0 17px!important}
+#homePage .llQuickDetails .game{min-height:135px!important}
+@media(min-width:800px) and (max-width:1200px){
+  .adventureQuickShowcase{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .quickFeature{padding-left:70px;padding-right:11px;min-height:116px}
+  .quickFeatureIcon{left:5px;font-size:64px}
+  .quickFeature strong{font-size:18px}
+  #homePage .llQuickDetails .gameGrid{grid-template-columns:repeat(4,minmax(0,1fr))}
+}
+@media(max-width:799px){
+  .siteHeader{min-height:76px;padding:8px 70px 8px 18px}
+  .siteHeader .brandHome{max-width:100%;gap:9px}
+  .siteHeader .brandCopy strong{font-size:clamp(24px,5vw,35px)}
+  .siteHeader .brandApple{font-size:36px}
+  .siteHeader .brandFox{width:52px;height:58px}
+  .siteHeader .brandFox img{height:90px;width:90px;transform:translateY(14px)}
+  .siteHeader .profileBox{right:11px}
+  .siteHeader .profileTrigger{width:50px;height:50px;font-size:26px}
+  #homePage .adventureHero{min-height:149px}
+  .adventureHeroScene{width:42%;height:175px;bottom:-6px}
+  .adventureHeroFox{height:173px;left:11%}
+  .adventureHeroStar{font-size:43px;right:14%}
+  .adventureHeroBooks{font-size:36px}
+  #homePage .llTopicGrid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  #homePage .llTopic.adventure-topic{min-height:195px}
+  .scene-sprite{font-size:clamp(30px,4.5vw,47px)}
+  #homePage .llQuickDetails .gameGrid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .adventureQuickShowcase{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .quickFeature{min-height:119px;padding-left:94px}
+}
+@media(max-width:599px){
+  .app{padding:6px 9px 24px}
+  .siteHeader{border-radius:20px;padding:8px 58px 8px 7px;min-height:69px}
+  .siteHeader .brandHome{gap:4px}
+  .siteHeader .brandApple{font-size:29px}
+  .siteHeader .brandCopy strong{font-size:clamp(20px,6vw,28px);letter-spacing:-.055em}
+  .siteHeader .brandCopy small{font-size:9px;letter-spacing:0;margin-top:4px}
+  .siteHeader .brandFox{width:42px;height:49px}
+  .siteHeader .brandFox img{height:80px;width:80px;transform:translateY(12px)}
+  .siteHeader .profileBox{right:6px}
+  .siteHeader .profileTrigger{width:47px;height:47px;font-size:24px}
+  .siteHeader:before,.siteHeader:after{display:none}
+  #homePage .adventureHero{min-height:148px;padding:17px 13px;border-radius:22px}
+  #homePage .adventureHero .helloKicker{font-size:11px;margin-bottom:4px}
+  #homePage .adventureHero h1{font-size:clamp(25px,6.5vw,32px);max-width:80%}
+  #homePage .adventureHero p{font-size:12px;max-width:72%}
+  .adventureHeroScene{right:-4%;width:37%;height:156px}
+  .adventureHeroFox{height:146px;left:-17%;bottom:-8px}
+  .adventureHeroStar{font-size:28px;right:15%;top:35px}
+  .adventureHeroBooks{display:none}
+  .adventureCloud{transform:scale(.5)}
+  #homePage .resumePanel{grid-template-columns:1fr;gap:6px;text-align:center;padding:11px 12px}
+  #homePage .resumePanel .resumeEyebrow,#homePage .resumePanel .resumeDescription{text-align:center}
+  #homePage .llCurrResume.adventureResume{flex-direction:column;padding:12px}
+  .adventureResumeIntro{justify-content:center;text-align:center}
+  .resumeRocket{font-size:33px}
+  #homePage .llCurrResume .llPrimary{width:100%;min-height:51px}
+  #homePage .llStudioHeader{margin:3px 2px 14px;display:block}
+  #homePage .llStudioHeader h2{font-size:clamp(25px,6.4vw,31px)}
+  #homePage .llStudioHeader p{font-size:12px}
+  #homePage .llStudioBadge{display:none}
+  #homePage .llCurriculumTools{margin:0 0 14px;gap:12px}
+  #homePage .llSubjects{width:100%;display:grid;grid-template-columns:1fr 1fr;gap:9px}
+  #homePage .llSubjects button{min-width:0;min-height:69px;padding:6px;gap:5px;border-width:3px;border-radius:18px;font-size:clamp(17px,4.7vw,23px)}
+  #homePage .llSubjects button span{font-size:clamp(27px,6vw,36px)}
+  #homePage .llGradeLabel{width:100%;min-width:0;padding-right:0}
+  #homePage .llGradeLabel select{font-size:17px;min-height:56px;width:100%;padding:10px 13px}
+  #homePage .llGradeLabel:after{right:8px;font-size:27px}
+  #homePage .llTopicHeading{align-items:flex-start;margin:8px 0}
+  #homePage .llTopicHeading h3{font-size:clamp(17px,5.2vw,23px)}
+  #homePage .llTopicHeading>span{font-size:11px;padding:6px;white-space:nowrap}
+  #homePage .llTopicGrid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  #homePage .llTopic.adventure-topic{min-height:206px;padding:10px 8px 9px;border-radius:18px}
+  #homePage .llTopic.adventure-topic .adventure-title{font-size:clamp(13px,3.6vw,16px);min-height:34px;margin-right:12px}
+  #homePage .llTopic.adventure-topic .adventure-art{min-height:103px;height:113px;border-radius:11px}
+  #homePage .llTopic.adventure-topic .llTopicStatus{font-size:11px}
+  .scene-sprite{font-size:clamp(23px,7vw,36px)}
+  .scene-actors{gap:2px}
+  .scene-sun{height:23px;width:23px;top:9px;right:12px}
+  .scene-cloud{transform:scale(.45)}
+  .adventureQuickHeading{display:block;margin:2px 2px 10px}
+  .adventureQuickHeading h2{font-size:28px}
+  .adventureQuickHeading p{font-size:12px;margin:5px 0}
+  .adventureQuickShowcase{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+  .quickFeature{min-height:124px;padding:13px 7px 13px 67px;border-width:2px;border-radius:19px}
+  .quickFeatureIcon{font-size:57px;left:1px;bottom:8px}
+  .quickFeature strong{font-size:clamp(15px,4.3vw,19px)}
+  .quickFeature small{font-size:11px;margin-top:4px}
+  #homePage .llQuickDetails .gameGrid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  #homePage .llQuickDetails>summary{gap:5px;font-size:16px}
+  #homePage .llQuickDetails>summary .quickDetailsCaption{display:none}
+}
+@media(max-width:365px){
+ .siteHeader .brandFox{display:none}
+ #homePage .adventureHero h1{font-size:23px}
+ .adventureHeroScene{width:33%}
+ #homePage .llTopic.adventure-topic{min-height:192px}
+ .scene-sprite{font-size:23px}
+}
+@media(prefers-reduced-motion:reduce){
+ #homePage .llTopic.adventure-topic,
+ #homePage .llSubjects button,
+ .quickFeature{transition:none!important}
+}
