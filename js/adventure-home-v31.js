@@ -121,6 +121,13 @@
     progressText.setAttribute('aria-label',label);
   }
  }
+ document.querySelectorAll('[data-featured-game]').forEach(feature=>{
+   feature.addEventListener('click',()=>{
+     const name=feature.dataset.featuredGame;
+     const original=[...document.querySelectorAll('#llQuickDetails .game[data-game]')].find(button=>button.dataset.game===name);
+     if(original)original.click();
+   });
+ });
  const obs=new MutationObserver(decorate);
  obs.observe(grid,{childList:true});
  decorate();
