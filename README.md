@@ -1,27 +1,21 @@
-# 🌈 Little Learning
+# Little Learning 🌈
 
-A free, mobile-first educational game website for young children.
+Free, no-signup preschool educational learning games (ages ~5). A static responsive HTML/CSS/JS website with large touch buttons, voice feedback, and offline-first assets.
 
 ## Games
-Math · Picture Quiz · English · Find & Circle · Find Numbers · Match Numbers · Match Alphabets · Find Odd Numbers · Missing Alphabets · **Two Missing Alphabets** · Missing Numbers · **Two Missing Numbers**.
+Math, Picture Quiz, English, Find & Circle, Find Numbers, Match Numbers, Match Alphabets, Find Odd Numbers, Missing Alphabets, Two Missing Alphabets, Missing Numbers, Two Missing Numbers.
 
-**Workbook, Run & Learn and Find the Way are intentionally excluded.**
+Workbook and Run & Learn are intentionally removed.
 
-## Progress
-Saved in the browser's `localStorage` on the **same device and hostname**; no account or database required. The **Continue Playing** button resumes the selected game, including partially completed worksheets, matches and drag-and-drop questions. Progress does not sync across devices and does not transfer automatically when switching from Hostinger's hostname to a new Vercel hostname.
+## Progress saving
+Each game checkpoint is stored in the **same browser on the same device** using `localStorage`. Unfinished questions, score, stars, selected level and completed matches/blanks can be restored by selecting **Continue Playing** on the home page. Starting a game from its tile begins a new session for that game. Local browser data is not shared between devices, cleared browser data cannot be recovered, and moving to a new hostname changes the storage origin.
 
-## Run and deploy
-This is a **static site** using only HTML, CSS and JavaScript, with no build step. Place `index.html`, `css/`, `js/`, `manifest.webmanifest` and `sw.js` in the repository root. Import the repository into Vercel using framework **Other**, root directory `./`, and an empty build command. Pushing changes to `main` automatically deploys updates once Git is connected.
+## Levels
+Number ranges: Level 1 1–20; Level 2 10–30; Level 3 20–40; Level 4 30–50; Level 5 40–60; Level 6 50–70; Level 7 60–80; Level 8 70–90; Level 9 80–100; Level 10 1–100 challenge. Both "Two Missing" games always require two answers. Other missing-letter/number games increase blanks over levels. All modes support levels 1–10, and try to avoid repeats within the same level.
 
-**Before deploying**, upload the *contents* of the release ZIP, not the ZIP archive as one file. The game code and assets must be uploaded for the website to work.
+## Deployment
+No build step, no package manager, no database. Import the GitHub repository into Vercel with Framework Preset **Other**, root `./`, and empty Build Command; Vercel serves `index.html` from the root. Each push to `main` deploys automatically. No Supabase needed.
 
-## Number levels
-L1 1–20; L2 10–30; L3 20–40; L4 30–50; L5 40–60; L6 50–70; L7 60–80; L8 70–90; L9 80–100; L10 1–100.
+Use the contents of this directory directly for GitHub; **do not upload the ZIP as a single repository file**. Google Analytics ID: `G-GM5VNJ5795`. Contact form sends to `hello@askzalas.com` through FormSubmit (requires internet).
 
-Contact form uses FormSubmit to deliver to `hello@askzalas.com`. Analytics uses Google tag `G-GM5VNJ5795`. Offline play works after the initial online visit when the service worker has cached static files.
-
-### Privacy
-No signup, player name or profile is needed to store progress. It is saved locally. Avoid collecting children's personal information in analytics or the contact form.
-
-### Development
-All updates should preserve existing games, keep questions non-repeating within a level, use large touch controls, provide browser speech synthesis, and support all 10 levels.
+`sw.js` caches the HTML, CSS, JS and manifest after first online load for offline play. Browser voice quality and offline voice availability depend on installed voices.

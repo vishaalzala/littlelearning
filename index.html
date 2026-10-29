@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Little Learning Games</title>
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <meta name="theme-color" content="#ffdb73" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="stylesheet" href="css/style-v20261030-01.css" />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GM5VNJ5795"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-GM5VNJ5795');
+  </script>
+</head>
+<body>
+  <!-- Build: v20261030-01 | Little Learning migration edition -->
+  <main class="app">
+    <section id="homePage" class="page active">
+      <div class="hero">
+        <div class="logo">🌈</div>
+        <h1>Little Learning</h1>
+        <p>Tap, count, speak and play!</p>
+        <p class="freeLine">100% free, No signup required!</p>
+        <button id="contactBtn" class="heroContactBtn" type="button">Contact Us</button>
+      </div>
+
+      <div class="settings">
+        <label>Level
+          <select id="levelSelect">
+            <option value="1">Level 1</option>
+            <option value="2">Level 2</option>
+            <option value="3">Level 3</option>
+            <option value="4">Level 4</option>
+            <option value="5">Level 5</option>
+            <option value="6">Level 6</option>
+            <option value="7">Level 7</option>
+            <option value="8">Level 8</option>
+            <option value="9">Level 9</option>
+            <option value="10">Level 10</option>
+          </select>
+        </label>
+
+        <label>Questions per Level
+          <select id="questionSelect">
+            <option value="5">5</option>
+            <option value="10" selected>10</option>
+            <option value="20">20</option>
+            <option value="30">30</option>
+            <option value="40">40</option>
+            <option value="50">50</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="resumePanel" id="resumePanel" hidden>
+        <button id="continueGame" class="continueGame" type="button">▶ Continue Playing</button>
+        <div id="resumeDescription" class="resumeDescription" aria-live="polite"></div>
+      </div>
+      <div class="gameGrid">
+        <button class="game math" data-game="math"><span>Math<small>Count and add</small></span><b>🔢</b></button>
+        <button class="game picture" data-game="picture"><span>Picture Quiz<small>Tap number</small></span><b>🐶</b></button>
+        <button class="game english" data-game="english"><span>English<small>Find word</small></span><b>ABC</b></button>
+        <button class="game missingalpha" data-game="missingalpha"><span>Missing Alphabets<small>Drag the letter</small></span><b>A_Z</b></button>
+        <button class="game missingalpha twoMissingAlpha" data-game="missingalpha2"><span>Two Missing Alphabets<small>Find 2 letters</small></span><b>A__D</b></button>
+        <button class="game missingnum" data-game="missingnum"><span>Missing Numbers<small>Drag the number</small></span><b>1_3</b></button>
+        <button class="game missingnum twoMissingNum" data-game="missingnum2"><span>Two Missing Numbers<small>Find 2 numbers</small></span><b>1__4</b></button>
+        <button class="game find" data-game="find"><span>Find & Circle<small>Round the picture</small></span><b>🧸</b></button>
+        <button class="game findnum" data-game="findnum"><span>Find Numbers<small>Round the number</small></span><b>123</b></button>
+        <button class="game matchnum" data-game="matchnum"><span>Match Numbers<small>Count and draw lines</small></span><b>🔗</b></button>
+        <button class="game matchalpha" data-game="matchalpha"><span>Match Alphabets<small>Draw line to picture</small></span><b>🔤</b></button>
+        <button class="game findodd" data-game="findodd"><span>Find Odd Numbers<small>Find different number</small></span><b>🔍</b></button>
+      </div>
+    </section>
+
+
+    <section id="contactPage" class="page contactPage" aria-label="Contact Us">
+      <div class="topbar">
+        <button id="contactBackBtn" class="roundBtn" type="button" aria-label="Back to home">🏠</button>
+        <div class="title">Contact Us</div>
+        <button id="contactSoundBtn" class="roundBtn" type="button" aria-label="Sound">☎️</button>
+      </div>
+
+      <div class="contactCard">
+        <div class="contactIcon">💬</div>
+        <h2>Contact Us</h2>
+        <p class="contactIntro">Send us a message about this learning game.</p>
+
+        <form class="contactForm" action="https://formsubmit.co/hello@askzalas.com" method="POST">
+          <input type="hidden" name="_subject" value="New message from Little Learning Games" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="hidden" name="_captcha" value="false" />
+
+          <label>
+            Your Name
+            <input type="text" name="name" placeholder="Your name" required />
+          </label>
+
+          <label>
+            Email
+            <input type="email" name="email" placeholder="your@email.com" required />
+          </label>
+
+          <label>
+            Phone
+            <input type="tel" name="phone" placeholder="Phone number" />
+          </label>
+
+          <label>
+            Message
+            <textarea name="message" rows="5" placeholder="Write your message here..." required></textarea>
+          </label>
+
+          <button class="submitBtn" type="submit">Submit Message</button>
+        </form>
+      </div>
+    </section>
+
+    <section id="playPage" class="page">
+      <div class="topbar">
+        <button id="homeBtn" class="roundBtn">🏠</button>
+        <div id="gameTitle" class="title">Game</div>
+        <button id="soundBtn" class="roundBtn">🔊</button>
+      </div>
+
+      <div class="stats">
+        <div><small>Question</small><strong id="questionNumber">1/10</strong></div>
+        <div><small>Score</small><strong id="scoreText">0</strong></div>
+        <div><small>Stars</small><strong id="starsText">⭐ 0</strong></div>
+      </div>
+
+      <div id="playArea" class="card"></div>
+    </section>
+  </main>
+
+  <div id="feedback" class="feedback"></div>
+  <script src="js/app-v20261030-01.js"></script>
+<script>
+  if('serviceWorker' in navigator && location.protocol.startsWith('http')){
+    window.addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
+  }
+</script>
+</body>
+</html>

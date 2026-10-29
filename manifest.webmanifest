@@ -1,0 +1,9 @@
+{
+  "name": "Little Learning",
+  "short_name": "Little Learning",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#fff6d4",
+  "theme_color": "#ffdb73",
+  "description": "Free preschool learning games"
+}
