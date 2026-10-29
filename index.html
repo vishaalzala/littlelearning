@@ -11,6 +11,7 @@
   <link rel="manifest" href="manifest.webmanifest" />
   <link rel="stylesheet" href="css/style-v20261030-01.css" />
   <link rel="stylesheet" href="css/experience-v20261030-02.css" />
+  <link rel="stylesheet" href="css/layout-v20261030-03.css" />
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-GM5VNJ5795"></script>
   <script>
@@ -22,11 +23,13 @@
   </script>
 </head>
 <body>
-  <!-- Build: v20261030-02 | Little Learning 2.0 profile and progress -->
+  <!-- Build: v20261030-03 | Full-width home and bottom game progress -->
   <main class="app">
       <header class="siteHeader">
-        <div class="brandSymbol" aria-hidden="true">🌈</div>
-        <div class="brandCopy"><strong>Little Learning</strong><small>Tap, count, speak and play!</small></div>
+        <button class="brandHome" id="brandHomeBtn" type="button" aria-label="Go to Little Learning home">
+          <span class="brandSymbol" aria-hidden="true">🌈</span>
+          <span class="brandCopy"><strong>Little Learning</strong><small>Tap, count, speak and play!</small></span>
+        </button>
         <div class="profileBox" id="profileBox">
           <button id="profileMenuBtn" class="profileTrigger" type="button" aria-label="Open learner menu" aria-haspopup="true" aria-expanded="false">🦊</button>
           <div class="profileMenu" id="profileMenu" hidden>
@@ -123,18 +126,19 @@
         <button id="soundBtn" class="roundBtn">🔊</button>
       </div>
 
-      <div class="levelJourney">
-        <div class="levelJourneyTop"><span class="levelChip" id="levelChip">Level 1</span><span id="levelQuestion">Question 1 of 10</span></div>
-        <div class="levelDots" id="levelDots" aria-label="Level progress"></div>
-        <div class="questionMeter" aria-label="Questions completed"><div class="questionMeterFill" id="questionMeterFill"></div></div>
-      </div>
-      <div class="stats">
-        <div><small>Question</small><strong id="questionNumber">1/10</strong></div>
-        <div><small>Score</small><strong id="scoreText">0</strong></div>
-        <div><small>Stars</small><strong id="starsText">⭐ 0</strong></div>
-      </div>
-
       <div id="playArea" class="card"></div>
+      <div class="gameFooter" id="gameFooter" aria-label="Level and learning progress">
+  <div class="levelJourney">
+          <div class="levelJourneyTop"><span class="levelChip" id="levelChip">Level 1</span><span id="levelQuestion">Question 1 of 10</span></div>
+          <div class="levelDots" id="levelDots" aria-label="Level progress"></div>
+          <div class="questionMeter" aria-label="Questions completed"><div class="questionMeterFill" id="questionMeterFill"></div></div>
+        </div>
+        <div class="stats">
+          <div><small>Question</small><strong id="questionNumber">1/10</strong></div>
+          <div><small>Score</small><strong id="scoreText">0</strong></div>
+          <div><small>Stars</small><strong id="starsText">⭐ 0</strong></div>
+        </div>
+      </div>
     </section>
 
     <section class="page miniPage" id="profilePage" aria-label="Learner profile">
@@ -195,6 +199,7 @@
   <div id="feedback" class="feedback"></div>
   <script src="js/app-v20261030-01.js"></script>
   <script src="js/experience-v20261030-02.js"></script>
+  <script src="js/navigation-v20261030-03.js"></script>
 <script>
   if('serviceWorker' in navigator && location.protocol.startsWith('http')){
     window.addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
