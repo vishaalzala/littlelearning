@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="css/layout-v20261030-03.css" />
   <link rel="stylesheet" href="css/studio-v3.css" />
   <link rel="stylesheet" href="css/adventure-home-v31.css" />
+  <link rel="stylesheet" href="css/unified-resume-v32.css" />
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-GM5VNJ5795"></script>
   <script>
@@ -25,7 +26,7 @@
   </script>
 </head>
 <body>
-  <!-- Build: v20261030-05 | Little Learning Adventure illustrated home -->
+  <!-- Build: v20261030-06 | Unified Continue Learning banner -->
   <main class="app">
       <header class="siteHeader">
         <button class="brandHome" id="brandHomeBtn" type="button" aria-label="Go to Little Learning home">
@@ -63,19 +64,18 @@
       </div>
       <select id="levelSelect" hidden aria-hidden="true"><option value="1">Level 1</option></select>
 
-      <div class="resumePanel" id="resumePanel" hidden>
-        <div class="resumeEyebrow">🚀 Continue where you stopped</div>
-        <button id="continueGame" class="continueGame" type="button">▶ Continue Playing</button>
-        <div id="resumeDescription" class="resumeDescription" aria-live="polite"></div>
-      </div>
-
-      <div class="llCurrResume adventureResume" id="llCurrResume" hidden>
-        <div class="adventureResumeIntro">
-          <span class="resumeRocket" aria-hidden="true">🚀</span>
-          <div><small>✨ CONTINUE YOUR QUEST</small><strong id="llCurrResumeText">Pick up where you stopped</strong></div>
+      <section class="unifiedResume" id="unifiedResume" aria-label="Continue your learning" hidden>
+        <div class="unifiedResumeInfo">
+          <span class="unifiedResumeIcon" id="unifiedResumeIcon" aria-hidden="true">🚀</span>
+          <div class="unifiedResumeCopy">
+            <span class="unifiedResumeKicker">✨ PICK UP WHERE YOU STOPPED</span>
+            <strong class="unifiedResumeTitle" id="unifiedResumeTitle">Continue your adventure</strong>
+            <span class="unifiedResumeDetails" id="unifiedResumeDetails"></span>
+          </div>
         </div>
-        <button type="button" class="llPrimary" id="llCurrResumeBtn">▶ Continue Lesson</button>
-      </div>
+        <button type="button" id="unifiedResumeButton" class="unifiedResumeButton">▶ Continue Learning</button>
+      </section>
+
       <section id="llStudio" class="llStudio" aria-label="Learning adventures">
         <div class="llStudioHeader">
           <div class="llStudioHeading"><span class="llEyebrow">✨ LITTLE LEARNERS’ ADVENTURE ✨</span>
@@ -299,6 +299,7 @@
   <script src="js/voice-v3.js"></script>
   <script src="js/curriculum-v3.js"></script>
   <script src="js/adventure-home-v31.js"></script>
+  <script src="js/unified-resume-v32.js"></script>
 <script>
   if('serviceWorker' in navigator && location.protocol.startsWith('http')){
     window.addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
