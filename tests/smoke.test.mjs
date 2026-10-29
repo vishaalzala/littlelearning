@@ -8,7 +8,7 @@ const experience=readFileSync(new URL('../js/experience-v20261030-02.js',import.
 const css=readFileSync(new URL('../css/experience-v20261030-02.css',import.meta.url),'utf8');
 const sw=readFileSync(new URL('../sw.js',import.meta.url),'utf8');
 const layout=readFileSync(new URL('../css/layout-v20261030-03.css',import.meta.url),'utf8');
-const navigation=readFileSync(new URL('../js/navigation-v20261030-03.js',import.meta.url),'utf8');
+const navigation=readFileSync(new URL('../js/navigation-v3.js',import.meta.url),'utf8');
 test('all JavaScript assets parse',()=>{
   assert.doesNotThrow(()=>new Script(engine));
   assert.doesNotThrow(()=>new Script(experience));
@@ -68,9 +68,9 @@ test('desktop homepage uses wide 6-column layout and retains touch-friendly mobi
   assert.match(layout,/\.app\{width:100%;max-width:none/);
 });
 test('new assets are cache busted and available offline',()=>{
-  for(const asset of ['css/layout-v20261030-03.css','js/navigation-v20261030-03.js']){
+  for(const asset of ['css/layout-v20261030-03.css','js/navigation-v3.js']){
     assert.ok(html.includes(asset),asset);
     assert.ok(sw.includes(asset),asset);
   }
-  assert.match(sw,/little-learning-v20261030-03/);
+  assert.match(sw,/little-learning-v20261030-04/);
 });
