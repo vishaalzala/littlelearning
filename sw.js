@@ -1,5 +1,5 @@
-const CACHE="little-learning-v20261030-01";
-const FILES=["./","./index.html","./css/style-v20261030-01.css","./js/app-v20261030-01.js","./manifest.webmanifest"];
+const CACHE="little-learning-v20261030-02";
+const FILES=["./","./index.html","./css/style-v20261030-01.css","./js/app-v20261030-01.js","./css/experience-v20261030-02.css","./js/experience-v20261030-02.js","./manifest.webmanifest"];
 self.addEventListener('install', e=>{ e.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(FILES)).then(()=>self.skipWaiting())); });
 self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k.startsWith('little-learning-')&&k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim()));});
 self.addEventListener('fetch',e=>{if(e.request.method!=='GET'||new URL(e.request.url).origin!==self.location.origin)return;
