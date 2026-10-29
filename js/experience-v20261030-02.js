@@ -20,7 +20,8 @@
     const rows=allCompletions();
     const at=rows.findIndex(r=>r.game===state.game&&r.level===state.level);
     const now=new Date().toISOString();
-    const entry={game:state.game,level:state.level,questions:state.total,score:state.score,stars:state.stars,date:now};
+    const earlier=rows.filter(r=>r.game===state.game&&r.level<state.level); const usedStars=earlier.reduce((sum,r)=>sum+(Number(r.stars)||0),0); const usedScore=earlier.reduce((sum,r)=>sum+(Number(r.score)||0),0);
+    const entry={game:state.game,level:state.level,questions:state.total,score:Math.max(0,state.score-usedScore),stars:Math.max(0,state.stars-usedStars),date:now};
     if(at>=0){const old=rows[at];entry.stars=Math.max(old.stars||0,entry.stars);entry.score=Math.max(old.score||0,entry.score);rows[at]=entry;}
     else rows.push(entry);
     write(HISTORY_KEY,rows.slice(-150));
