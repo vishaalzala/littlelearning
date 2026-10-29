@@ -72,5 +72,5 @@ test('new assets are cache busted and available offline',()=>{
     assert.ok(html.includes(asset),asset);
     assert.ok(sw.includes(asset),asset);
   }
-  assert.match(sw,/little-learning-v20261030-04/);
+  assert.match(sw,/little-learning-v20261030-05/);
 });
