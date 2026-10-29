@@ -4,7 +4,7 @@ import {readFileSync} from 'node:fs';
 import vm from 'node:vm';
 const read=p=>readFileSync(new URL('../'+p,import.meta.url),'utf8');
 const catalog=read('curriculum/catalog-v3.js'),questions=read('curriculum/questions-v3.js');
-const ui=read('js/curriculum-v3.js'),voice=read('js/voice-v3.js');
+const ui=read('js/curriculum-v20261030-06.js'),voice=read('js/voice-v3.js');
 const nav=read('js/navigation-v3.js'),html=read('index.html'),css=read('css/studio-v3.css'),sw=read('sw.js');
 const context={window:{}};vm.runInNewContext(catalog,context);vm.runInNewContext(questions,context);
 const grades=context.window.LL_CATALOG.grades;
@@ -45,9 +45,9 @@ test('source code parses without frameworks or outside math libraries',()=>{
   assert.match(voice,/femaleNames/);
 });
 test('professional grade dashboard, voice profile, lesson screen and offline assets are wired',()=>{
-  const ids=['llStudio','llGradeSelect','llTopicGrid','llCurrResume','curriculumPage','llCurrPlay','llCurrChoices','llVoiceSelect','llVoicePreview','llCurriculumHistory'];
+  const ids=['llStudio','llGradeSelect','llTopicGrid','unifiedResume','curriculumPage','llCurrPlay','llCurrChoices','llVoiceSelect','llVoicePreview','llCurriculumHistory'];
   for(const id of ids)assert.ok(html.includes('id="'+id+'"'),id);
-  for(const asset of ['curriculum/catalog-v3.js','curriculum/questions-v3.js','css/studio-v3.css','js/voice-v3.js','js/curriculum-v3.js','js/navigation-v3.js']){
+  for(const asset of ['curriculum/catalog-v3.js','curriculum/questions-v3.js','css/studio-v3.css','js/voice-v3.js','js/curriculum-v20261030-06.js','js/navigation-v3.js']){
     assert.ok(html.includes(asset),asset+' missing from HTML');
     assert.ok(sw.includes(asset),asset+' missing from service-worker offline list');
   }
