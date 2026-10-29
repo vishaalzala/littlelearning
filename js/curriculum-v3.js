@@ -68,16 +68,10 @@
    renderContinue();
  }
  function renderContinue(){
-   const saved=cat.topics.filter(t=>getProgress(t)&&!getProgress(t).finished);
-   saved.sort((a,b)=>(getProgress(b).lastActive||0)-(getProgress(a).lastActive||0));
-   const t=saved[0],box=$('llCurrResume');
-   if(!box)return;
-   box.hidden=!t;
-   if(!t)return;
-   const p=getProgress(t);
-   $('llCurrResumeText').textContent=t.icon+' '+t.name+' • '+cat.grades[t.grade].label+' • Level '+p.level;
-   $('llCurrResumeBtn').onclick=()=>openTopic(t.id);
+   // Curriculum and Quick Play share one prominent Continue Learning banner.
+   if(typeof window.LL_REFRESH_RESUME==='function')window.LL_REFRESH_RESUME();
  }
+
  function openTopic(id){
    const t=cat.byId[id];if(!t)return;
    const p=progress(t);if(p.finished){p.finished=false;p.level=1;p.questionIndex=0;p.question=null;p.used={};p.stars=0;p.score=0;p.completed=[]}
