@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {Script} from 'node:vm';
 const html=readFileSync(new URL('../index.html',import.meta.url),'utf8');
-const engine=readFileSync(new URL('../js/app-v20261030-01.js',import.meta.url),'utf8');
+const engine=readFileSync(new URL('../js/app-v20261030-06.js',import.meta.url),'utf8');
 const experience=readFileSync(new URL('../js/experience-v20261030-02.js',import.meta.url),'utf8');
 const css=readFileSync(new URL('../css/experience-v20261030-02.css',import.meta.url),'utf8');
 const sw=readFileSync(new URL('../sw.js',import.meta.url),'utf8');
@@ -72,5 +72,5 @@ test('new assets are cache busted and available offline',()=>{
     assert.ok(html.includes(asset),asset);
     assert.ok(sw.includes(asset),asset);
   }
-  assert.match(sw,/little-learning-v20261030-05/);
+  assert.match(sw,/little-learning-v20261030-06/);
 });

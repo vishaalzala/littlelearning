@@ -1,0 +1,82 @@
+/* Little Learning v3.2 — one compact resume banner for every activity. */
+#homePage .unifiedResume[hidden]{display:none!important}
+#homePage .unifiedResume{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  align-items:center;
+  gap:clamp(12px,2vw,28px);
+  min-height:95px;
+  width:100%;
+  padding:13px clamp(15px,2.4vw,32px);
+  margin:0 0 13px;
+  border:2px solid #77bbef;
+  border-radius:23px;
+  background:linear-gradient(103deg,#c6efff 0%,#86d5fb 45%,#afeaf9 100%);
+  box-shadow:inset 0 3px 0 #ffffffb5,0 7px 17px #5385ae2b;
+  position:relative;
+  overflow:hidden;
+}
+#homePage .unifiedResume:before{
+  content:"";position:absolute;top:-60px;left:41%;width:210px;height:210px;
+  border:2px solid #ffffff48;border-radius:50%;pointer-events:none;
+}
+#homePage .unifiedResumeInfo{
+  display:flex;align-items:center;gap:clamp(12px,1.8vw,23px);min-width:0;z-index:1;
+}
+#homePage .unifiedResumeIcon{
+  width:69px;height:67px;flex:0 0 69px;
+  display:grid;place-items:center;
+  background:#fff9eaba;border:2px solid #ffffffb3;border-radius:19px;
+  box-shadow:0 4px 8px #669ab123;
+  font-size:38px;
+}
+#homePage .unifiedResumeCopy{
+  display:flex;flex-direction:column;gap:4px;min-width:0;
+}
+#homePage .unifiedResumeKicker{
+  font-size:clamp(10px,.85vw,12px);
+  letter-spacing:.08em;font-weight:1000;color:#386599;
+}
+#homePage .unifiedResumeTitle{
+  font-size:clamp(18px,1.7vw,26px);
+  line-height:1.15;color:#274b78;
+  font-weight:1000;overflow-wrap:anywhere;
+}
+#homePage .unifiedResumeDetails{
+  color:#31618a;font-size:clamp(12px,1vw,15px);
+  font-weight:800;line-height:1.3;
+}
+#homePage .unifiedResumeButton{
+  background:linear-gradient(180deg,#83d978,#34b16c);
+  color:#fff;text-shadow:0 1px 2px #196a4860;
+  border:3px solid #f6fff8;
+  box-shadow:0 4px 0 #158c58,0 8px 12px #338b8940;
+  border-radius:999px;
+  min-height:60px;
+  padding:11px clamp(20px,2.7vw,44px);
+  font-size:clamp(16px,1.35vw,21px);
+  font-weight:1000;
+  white-space:nowrap;
+  position:relative;z-index:1;
+  cursor:pointer;
+}
+#homePage .unifiedResumeButton:hover{filter:brightness(.97);transform:translateY(-1px)}
+#homePage .unifiedResumeButton:focus-visible{
+  outline:4px solid #554bd8;outline-offset:4px;
+}
+@media(max-width:680px){
+ #homePage .unifiedResume{
+  grid-template-columns:1fr;
+  gap:11px;padding:13px 14px;border-radius:19px;
+ }
+ #homePage .unifiedResumeInfo{gap:11px}
+ #homePage .unifiedResumeIcon{
+  flex-basis:52px;width:52px;height:52px;font-size:29px;border-radius:14px;
+ }
+ #homePage .unifiedResumeTitle{font-size:19px}
+ #homePage .unifiedResumeDetails{font-size:12px}
+ #homePage .unifiedResumeButton{width:100%;min-height:54px;font-size:17px}
+}
+@media(prefers-reduced-motion:reduce){
+ #homePage .unifiedResumeButton{transition:none!important}
+}

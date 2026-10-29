@@ -56,13 +56,11 @@ function checkpoint(){
   refreshContinueButton();
 }
 function refreshContinueButton(){
-  const panel=$("resumePanel"),btn=$("continueGame"),desc=$("resumeDescription");if(!panel||!btn)return;
-  let candidate=null;try{const preferred=localStorage.getItem(LAST_SAVE_KEY);candidate=savedProgress(preferred);
-    if(!candidate){Object.keys(names).forEach(game=>{const s=savedProgress(game);if(s&&(!candidate||s.updatedAt>candidate.updatedAt))candidate=s;});}}catch(e){}
-  panel.hidden=!candidate;
-  if(candidate){btn.textContent=`▶ Continue ${names[candidate.game]}`;desc.textContent=`Level ${candidate.level} • Question ${candidate.levelIndex} of ${candidate.total} • ⭐ ${candidate.stars}`;
-    btn.onclick=()=>resumeGame(candidate.game);}
+  // The unified home ribbon owns the resume UI for BOTH game systems.
+  // Keep all saved Quick Play state unchanged.
+  if(typeof window.LL_REFRESH_RESUME==='function')window.LL_REFRESH_RESUME();
 }
+
 function resumeGame(game){
   const s=savedProgress(game);if(!s)return start(game);
   state={...state,game:s.game,startLevel:s.startLevel,level:s.level,maxLevel:10,total:s.total,levelIndex:s.levelIndex,totalAsked:s.totalAsked,score:s.score,stars:s.stars,
