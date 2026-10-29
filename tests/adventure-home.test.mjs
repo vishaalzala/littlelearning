@@ -55,14 +55,15 @@ test('new home assets are referenced, cache-busted and available offline',()=>{
   assert.ok(html.includes(path),path+' missing from HTML');
   assert.ok(sw.includes(path),path+' missing from service worker');
  }
- assert.match(sw,/little-learning-v20261030-05/);
+ assert.match(sw,/little-learning-v20261030-06/);
 });
 
 test('old games and profile/progress navigation remain unchanged',()=>{
- for(const id of ['profileMenuBtn','menuProfile','menuHistory','menuContact','continueGame','llCurrResume','llCurrResumeBtn','curriculumPage','llCurrLevel']){
+ for(const id of ['profileMenuBtn','menuProfile','menuHistory','menuContact','unifiedResume','unifiedResumeButton','unifiedResumeDetails','curriculumPage','llCurrLevel']){
   assert.ok(html.includes('id="'+id+'"'),id+' missing');
  }
- assert.equal((html.match(/id="llCurrResume"/g)||[]).length,1);
+ assert.equal((html.match(/id="unifiedResume"/g)||[]).length,1);
+ assert.equal((html.match(/id="resumePanel"|id="llCurrResume"/g)||[]).length,0);
  assert.match(html,/js\/curriculum-v3\.js/);
  assert.match(html,/js\/experience-v20261030-02\.js/);
  assert.match(html,/js\/voice-v3\.js/);
