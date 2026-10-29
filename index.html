@@ -28,8 +28,9 @@
   <main class="app">
       <header class="siteHeader">
         <button class="brandHome" id="brandHomeBtn" type="button" aria-label="Go to Little Learning home">
-          <span class="brandSymbol" aria-hidden="true">🌈</span>
-          <span class="brandCopy"><strong>Little Learning</strong><small>Tap, count, speak and play!</small></span>
+          <span class="brandApple" aria-hidden="true">🍎</span>
+          <span class="brandCopy"><strong>Little Learning</strong><small>Play • Learn • Grow</small></span>
+          <span class="brandFox" aria-hidden="true"><img src="assets/fox-mascot-v31.svg" alt="" /></span>
         </button>
         <div class="profileBox" id="profileBox">
           <button id="profileMenuBtn" class="profileTrigger" type="button" aria-label="Open learner menu" aria-haspopup="true" aria-expanded="false">🦊</button>
@@ -44,14 +45,20 @@
     <section id="homePage" class="page active">
 
 
-      <div class="hero">
+      <div class="hero adventureHero">
         <div class="heroGreeting">
-          <span class="helloKicker">✨ Your happy learning adventure</span>
+          <span class="helloKicker">🌟 Welcome to your learning adventure</span>
           <h1 id="helloHeading">Hello, Little Star! 👋</h1>
           <p>Ready to learn something new today?</p>
           <p class="freeLine">100% free, No signup required!</p>
         </div>
-        <div id="heroArtwork" class="heroArtwork" aria-hidden="true">🌈 ⭐ 📚</div>
+        <div class="adventureHeroScene" aria-hidden="true">
+          <div class="adventureCloud adventureCloudOne"></div>
+          <div class="adventureCloud adventureCloudTwo"></div>
+          <span class="adventureHeroStar">⭐</span>
+          <span class="adventureHeroBooks">📚</span>
+          <img src="assets/fox-mascot-v31.svg" alt="" class="adventureHeroFox" />
+        </div>
       </div>
       <select id="levelSelect" hidden aria-hidden="true"><option value="1">Level 1</option></select>
 
