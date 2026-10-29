@@ -64,7 +64,7 @@ test('old games and profile/progress navigation remain unchanged',()=>{
  }
  assert.equal((html.match(/id="unifiedResume"/g)||[]).length,1);
  assert.equal((html.match(/id="resumePanel"|id="llCurrResume"/g)||[]).length,0);
- assert.match(html,/js\/curriculum-v3\.js/);
+ assert.match(html,/js\/curriculum-v20261030-06\.js/);
  assert.match(html,/js\/experience-v20261030-02\.js/);
  assert.match(html,/js\/voice-v3\.js/);
 });
