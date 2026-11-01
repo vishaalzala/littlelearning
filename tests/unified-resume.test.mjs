@@ -116,6 +116,6 @@ test('new versioned files are referenced in HTML and cached for offline use',()=
   'js/unified-resume-v32.js',
   'css/unified-resume-v32.css'
  ]){assert.ok(html.includes(path),path);assert.ok(sw.includes(path),path)}
- assert.match(sw,/little-learning-v20261030-06/);
+ assert.match(sw,/little-learning-v20261102-01/);
  assert.equal((html.match(/data-game=/g)||[]).length,12);
 });
