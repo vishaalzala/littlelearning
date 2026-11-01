@@ -2,7 +2,6 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 const html=readFileSync(new URL('../index.html',import.meta.url),'utf8');
-const home=html.slice(html.indexOf('<section id="homePage"'),html.indexOf('</section>',html.indexOf('<section class="adventureQuickFeatures"')));
 test('one clear home journey without duplicate promotional game galleries',()=>{
  assert.match(html,/<section[^>]*id="llStudio"/);
  assert.match(html,/id="unifiedResume"/);
