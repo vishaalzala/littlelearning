@@ -17,16 +17,14 @@ test('the home page has original illustrated mascot, child greeting, subject sel
   assert.match(html,/data-ll-subject="math"/);
   assert.match(html,/data-ll-subject="english"/);
   assert.match(html,/id="llTopicGrid"/);
-  assert.match(html,/LITTLE LEARNERS/);
+  assert.match(html,/What shall we learn today\?/);
 });
 
-test('four Quick Play illustrations launch existing real games',()=>{
- const featured=[...html.matchAll(/data-featured-game="([a-z0-9]+)"/g)].map(m=>m[1]);
+test('one expandable Quick Play section retains all 12 real games',()=>{
  const existing=[...html.matchAll(/data-game="([a-z0-9]+)"/g)].map(m=>m[1]);
- assert.deepEqual(featured,['math','english','find','matchnum']);
  assert.equal(existing.length,12);
- for(const id of featured) assert.ok(existing.includes(id),'Unknown Quick Play game: '+id);
- assert.match(script,/original\.click\(\)/);
+ assert.equal(new Set(existing).size,12);
+ assert.doesNotMatch(html,/data-featured-game=/);
  assert.match(html,/id="llQuickDetails"/);
 });
 
@@ -55,7 +53,7 @@ test('new home assets are referenced, cache-busted and available offline',()=>{
   assert.ok(html.includes(path),path+' missing from HTML');
   assert.ok(sw.includes(path),path+' missing from service worker');
  }
- assert.match(sw,/little-learning-v20261030-06/);
+ assert.match(sw,/little-learning-v20261102-01/);
 });
 
 test('old games and profile/progress navigation remain unchanged',()=>{
